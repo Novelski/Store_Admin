@@ -1,0 +1,83 @@
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-label color="white" class="ion-margin ion-padding-start">
+      Welcome
+      <p>
+        <ion-text class="ion-margin ion-padding-start">Back</ion-text>
+      </p>
+    </ion-label>
+  </ion-grid>
+</ion-content>
+<ion-footer class="ion-no-border">
+  <ion-row>
+
+    <ion-fab vertical="top" horizontal="end">
+<ion-fab-button color="danger" (click)="signIn()">
+<ion-icon name="arrow-forward-outline"></ion-icon>
+</ion-fab-button>
+    </ion-fab>
+    <ion-list lines="full">
+      <ion-list-header class="ion-margin">
+        <ion-label>Login</ion-label>
+      </ion-list-header>
+      <ion-item-group class="ion-margin-horizontal ion-margin-bottom">
+        <form [formGroup]="form">
+          <div class="ion-margin-vertical">
+            <ion-item>
+              <ion-input
+                formControlName="username"
+                placeholder="Enter User Name"
+                type="text"
+              ></ion-input>
+            </ion-item>
+            <ion-text
+              *ngIf="!form.get('username').valid && form.get('username').touched"
+            >
+              <ion-text
+                class="error"
+                *ngIf="form.get('username').hasError('required')"
+                color="danger"
+              >
+                * Please Enter The User Name
+              </ion-text>
+            </ion-text>
+          </div>
+          <div class="ion-margin-vertical">
+            <ion-item>
+              <ion-icon
+                [name]="type ? 'eye-outline' : 'eye-off-outline'"
+                slot="end"
+                color="medium"
+                (click)="changeType()"
+              ></ion-icon>
+              <ion-input
+                formControlName="password"
+                placeholder="Enter Password"
+                [type]="type ? 'password' : 'text'"
+              ></ion-input>
+            </ion-item>
+            <ion-text
+            *ngIf="!form.get('password').valid && form.get('password').touched"
+          >
+            <ion-text
+              class="error"
+              *ngIf="form.get('password').hasError('required')"
+              color="danger"
+            >
+              * Please Enter The Password
+            </ion-text>
+          </ion-text>
+          </div>
+          
+        </form>
+
+        <ion-item lines="none" class="ion-padding-top">
+          <ion-text color="danger" slot="end" routerLink="/forgot-password">
+            Forgot Password?
+          </ion-text>
+
+        </ion-item>
+      </ion-item-group>
+    </ion-list>
+  </ion-row>
+</ion-footer>
