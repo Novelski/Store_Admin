@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-menu-button
+      slot="start"
+      menu="sidenav"
+      color="light"
+    ></ion-menu-button>
+    <ion-title class="ion-text-center" color="light">
+      Cancelled Order Management</ion-title
+    >
+    <ion-buttons slot="end">
+      <ion-button (click)="switchStyle()">
+        <ion-icon color="light" name="bulb"> </ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ngx-datatable
+    [rows]="order"
+    [ngClass]="tableStyle"
+    [rowHeight]="'auto'"
+    [headerHeight]="50"
+    [columnMode]="'force'"
+  >
+    <ngx-datatable-column
+      name="orderId"
+      [sortable]="false"
+    ></ngx-datatable-column>
+    <ngx-datatable-column name="items"></ngx-datatable-column>
+
+    <ngx-datatable-column name="amount"></ngx-datatable-column>
+    <ngx-datatable-column name="reason"></ngx-datatable-column>
+  </ngx-datatable>
+</ion-content>

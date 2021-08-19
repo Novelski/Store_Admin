@@ -1,0 +1,101 @@
+[
+    {
+      "id": 1,
+      "name": "Vivek",
+      "gender" : "Male",
+      "age" : 25,
+      "email": "vivek@gmail.com",
+      "phone": 9898989898,
+      "adhaar": "1234-3454-6789"
+    },
+    {
+      "id": 2,
+      "name": "Vivek",
+      "gender" : "Male",
+      "age" : 25,
+      "email": "vivek@gmail.com",
+      "phone": 9898989898,
+      "adhaar": "1234-3454-6789"
+    },
+    {
+      "id": 3,
+      "name": "Vivek",
+      "gender" : "Male",
+      "age" : 25,
+      "email": "vivek@gmail.com",
+      "phone": 9898989898,
+      "adhaar": "3456-8765-1234"
+    },
+    {
+      "id": 4,
+      "name": "Vivek",
+      "gender" : "Male",
+      "age" : 25,
+      "email": "vivek@gmail.com",
+      "phone": 9898989898,
+      "adhaar": "1234-3454-6789"
+    },
+    {
+      "id": 5,
+      "name": "Vivek",
+      "gender" : "Male",
+      "age" : 25,
+      "email": "vivek@gmail.com",
+      "phone": 9898989898,
+      "adhaar": "1234-3454-6789"
+    },
+    {
+      "id": 6,
+      "name": "Vivek",
+      "gender" : "Male",
+      "age" : 25,
+      "email": "vivek@gmail.com",
+      "phone": 9898989898,
+      "adhaar": "3456-8765-1234"
+    },
+    {
+      "id": 7,
+      "name": "Vivek",
+      "gender" : "Male",
+      "age" : 25,
+      "email": "vivek@gmail.com",
+      "phone": 9898989898,
+      "adhaar": "1234-3454-6789"
+    },
+    {
+      "id": 8,
+      "name": "Vivek",
+      "gender" : "Male",
+      "age" : 25,
+      "email": "vivek@gmail.com",
+      "phone": 9898989898,
+      "adhaar": "3456-8765-1234"
+    },
+    {
+      "id": 9,
+      "name": "Vivek",
+      "gender" : "Male",
+      "age" : 25,
+      "email": "vivek@gmail.com",
+      "phone": 9898989898,
+      "adhaar": "1234-3454-6789"
+    },
+    {
+      "id": 10,
+      "name": "Vivek",
+      "gender" : "Male",
+      "age" : 25,
+      "email": "vivek@gmail.com",
+      "phone": 9898989898,
+      "adhaar": "1234-3454-6789"
+    },{
+      "id": 11,
+      "name": "Vivek",
+      "gender" : "Male",
+      "age" : 25,
+      "email": "vivek@gmail.com",
+      "phone": 9898989898,
+      "adhaar": "3456-8765-1234"
+    }
+  ]
+  

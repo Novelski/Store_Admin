@@ -16,7 +16,7 @@
         Enter Verification Code
         <ion-row class="ion-padding-top ion-text-center">
           <ion-col>
-            <ion-input 
+            <ion-input
               autofocus="true"
               required
               maxlength="1"
@@ -26,8 +26,8 @@
               [(ngModel)]="otpString[0]"
               (keyup)="otp($event, '', otp2, 0)">
             </ion-input>
-  
-            <ion-input 
+
+            <ion-input
               class="marginLeft"
               autofocus="true"
               required
@@ -38,8 +38,8 @@
               [(ngModel)]="otpString[1]"
               (keyup)="otp($event, otp1, otp3, 1)">
             </ion-input>
-  
-            <ion-input 
+
+            <ion-input
               class="marginLeft"
               autofocus="true"
               required
@@ -50,8 +50,8 @@
               [(ngModel)]="otpString[2]"
               (keyup)="otp($event, otp2, otp4, 2)">
             </ion-input>
-  
-            <ion-input 
+
+            <ion-input
               class="marginLeft"
               autofocus="true"
               required
@@ -63,17 +63,17 @@
               (keyup)="otp($event, otp3, '', 3)">
             </ion-input>
           </ion-col>
-          
+
         </ion-row>
       </ion-label>
 
 
     </ion-item>
     <ion-item lines="none" class="ion-padding-top">
-      <ion-button color="danger" expand="block" slot="end" >
+      <ion-button color="danger" expand="block" slot="end" routerLink="/change-password" >
         Verify
       </ion-button>
   </ion-item>
   </ion-list>
-  
+
 </ion-footer>

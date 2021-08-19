@@ -1,20 +1,41 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
+<ion-toolbar >
+
+  <ion-menu-button slot="start" menu="sidenav" color="light"></ion-menu-button>
+  <ion-title class="ion-text-center" color="light">Inventory Management</ion-title>
+  <ion-buttons slot="end">
+    <ion-button (click)= "switchStyle()">
+<ion-icon  color="light" name="bulb"  > </ion-icon>
+</ion-button>
+</ion-buttons>
+</ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ngx-datatable [rows]="inventory"
+[ngClass]="tableStyle"
+[rowHeight]="'auto'"
+[headerHeight]="50"
+[columnMode]="'force'"
+>
+  <ngx-datatable-column name="title" ></ngx-datatable-column>
+  <ngx-datatable-column name="type"></ngx-datatable-column>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ngx-datatable-column name="price"></ngx-datatable-column>
+  <ngx-datatable-column name="quantity"></ngx-datatable-column>
+  <ngx-datatable-column name="Actions" [sortable]="false">
+    <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+      <ion-button size="small" fill="outline" color="success" (click)="openModal()">
+        <ion-icon size="small" name="add" color="success"></ion-icon>
+      </ion-button>
+      <ion-button size="small" fill="outline" color="danger" >
+        <ion-icon size="small" name="trash" color="danger"></ion-icon>
+      </ion-button>
+      <ion-button size="small" fill="outline" (click)="openEdit()">
+        <ion-icon size="small" name="create"></ion-icon>
+      </ion-button>
+
+    </ng-template>
+  </ngx-datatable-column>
+</ngx-datatable>
 </ion-content>
