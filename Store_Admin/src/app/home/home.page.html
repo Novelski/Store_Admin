@@ -14,21 +14,25 @@
 <ion-content [fullscreen]="true">
 <ngx-datatable [rows]="inventory"
 [ngClass]="tableStyle"
+[loadingIndicator]="loadingIndicator"
 [rowHeight]="'auto'"
 [headerHeight]="50"
 [columnMode]="'force'"
+[reorderable]="reorderable"
 >
-  <ngx-datatable-column name="title" ></ngx-datatable-column>
-  <ngx-datatable-column name="type"></ngx-datatable-column>
+  <ngx-datatable-column name="id" ></ngx-datatable-column>
+  <ngx-datatable-column name="name"></ngx-datatable-column>
 
+  <ngx-datatable-column name="Type"></ngx-datatable-column>
   <ngx-datatable-column name="price"></ngx-datatable-column>
+  <ngx-datatable-column name="itemCode"></ngx-datatable-column>
   <ngx-datatable-column name="quantity"></ngx-datatable-column>
   <ngx-datatable-column name="Actions" [sortable]="false">
     <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
       <ion-button size="small" fill="outline" color="success" (click)="openModal()">
         <ion-icon size="small" name="add" color="success"></ion-icon>
       </ion-button>
-      <ion-button size="small" fill="outline" color="danger" >
+      <ion-button size="small" fill="outline" color="danger" ">
         <ion-icon size="small" name="trash" color="danger"></ion-icon>
       </ion-button>
       <ion-button size="small" fill="outline" (click)="openEdit()">

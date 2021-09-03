@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-title  class="ion-text-center" color="light">New Order</ion-title>
+  <ion-button slot="end" color="light" (click)="dismissModal()"> Close</ion-button>
+  </ion-toolbar>
+  </ion-header>
+  <ion-content>
+ <ion-list>
+   
+   <ion-item>
+    <ion-label>Items</ion-label>
+    <ion-text >
+      Bread, Butter,salt
+    </ion-text>
+   </ion-item>
+   <ion-item>
+    <ion-label>Amount</ion-label>
+    <ion-text >
+      240
+    </ion-text>
+   </ion-item>
+   <ion-row>
+   <ion-button color="success">Accept</ion-button>
+   <ion-button  color="danger">Cancel</ion-button>
+  </ion-row>
+ </ion-list>
+  </ion-content>

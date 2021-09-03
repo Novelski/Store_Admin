@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-title>Add Entry</ion-title>
+  <ion-button slot="end" color="light" (click)="dismissModal()"> Close</ion-button>
+  
+  </ion-toolbar>
+  </ion-header>
+  <ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>Item</ion-label>
+      <ion-select >
+        <ion-select-option>Chicken</ion-select-option>
+        <ion-select-option >Butter</ion-select-option>
+        <ion-select-option>Rice</ion-select-option>
+        <ion-select-option>oil</ion-select-option>
+      </ion-select>
+    </ion-item>
+    
+      <ion-item>
+        <ion-label>Amount</ion-label>
+        <ion-input type="number" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>PaymentType</ion-label>
+        <ion-select value="dog">
+          <ion-select-option value="cat">Online</ion-select-option>
+          <ion-select-option value="dog">Offline</ion-select-option>
+        </ion-select>
+      </ion-item>
+  </ion-list>
+    
+    <ion-button expand="block">Add</ion-button>
+  </ion-content>
+  

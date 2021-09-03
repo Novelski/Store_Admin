@@ -1,24 +1,24 @@
 /* eslint-disable @typescript-eslint/no-inferrable-types */
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators,FormBuilder } from '@angular/forms';
+import {Router} from '@angular/router';
+import {AuthService} from '../services/auth.service'
 @Component({
   selector: 'app-login-screen',
   templateUrl: './login-screen.page.html',
   styleUrls: ['./login-screen.page.scss'],
 })
 export class LoginScreenPage implements OnInit {
-  form: FormGroup;
+  AccountForm: FormGroup;
   type: boolean = true;
-  constructor() {}
+  tokenInfo: any;
+  constructor(private router: Router,private formBuilder: FormBuilder, private authService: AuthService) {}
 
   ngOnInit() {
-    this.form = new FormGroup({
-      username: new FormControl(null, {
-        validators: [Validators.required],
-      }),
-      password: new FormControl(null, {
-        validators: [Validators.required],
-      }),
+    this.AccountForm = this.formBuilder.group({
+      userName:['',[Validators.required,]],
+      password: ['',[Validators.required,]],
+   
     });
   }
 
@@ -26,10 +26,24 @@ export class LoginScreenPage implements OnInit {
     this.type = !this.type;
   }
 
-  signIn(){
-    if(!this.form.valid){
-      this.form.markAllAsTouched();
-      return;
+  submit() {
+    
+    let values: any = this.AccountForm.value;
+    this.authService.login(values).subscribe(res => {
+      
+      this.getSuccess(res);
+    },
+      (err: any) => {
+        this.router.navigateByUrl('/login-screen');
+        alert("please enter correct user name and password");
+      }
+    );
+  }
+  getSuccess(res) {
+    this.tokenInfo = res;
+    
+    if (this.tokenInfo != null) {
+      this.router.navigateByUrl('/dashboard');
     }
   }
 }

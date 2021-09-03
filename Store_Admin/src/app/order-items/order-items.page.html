@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-menu-button
+      slot="start"
+      menu="sidenav"
+      color="light"
+    ></ion-menu-button>
+    <ion-title class="ion-text-center" color="light">Order Items</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="switchStyle()">
+        <ion-icon color="light" name="bulb"> </ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let order of order">
+      <ion-avatar>
+        <ion-img [src]="order.imageUrl"></ion-img>
+      </ion-avatar>
+      <ion-label>
+        {{ order.title }}
+      </ion-label>
+      <ion-label>
+     Avialable Quantity:   {{order.quantity}}
+      </ion-label>
+      <ion-item>
+        <ion-button size="small" fill="outline" color="success" (click)="openModal()">
+          <ion-icon size="small" name="add" color="success"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-item>
+  </ion-list>
+</ion-content>

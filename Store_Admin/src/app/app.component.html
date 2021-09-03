@@ -8,9 +8,28 @@
     <ion-content>
       <ion-list>
         <ion-menu-toggle menu="sidenav">
+          <ion-item lines="none" routerLink="/dashboard">
+            <ion-icon name="cart" slot="start" color="light"></ion-icon>
+            <ion-label>Dashboard</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        
+        <ion-menu-toggle menu="sidenav">
           <ion-item lines="none" routerLink="/home">
             <ion-icon name="cart" slot="start" color="light"></ion-icon>
             <ion-label>Inventory Management</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle menu="sidenav">
+          <ion-item lines="none" routerLink="/order-items">
+            <ion-icon name="close" slot="start" color="light"></ion-icon>
+            <ion-label> Order Items</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle menu="sidenav">
+          <ion-item lines="none" routerLink="/new-orders">
+            <ion-icon name="checkbox-outline" slot="start" color="light"></ion-icon>
+            <ion-label>New Order </ion-label>
           </ion-item>
         </ion-menu-toggle>
         <ion-menu-toggle menu="sidenav">
@@ -31,6 +50,19 @@
             <ion-label> Cancelled Order Management</ion-label>
           </ion-item>
         </ion-menu-toggle>
+        <ion-menu-toggle menu="sidenav">
+          <ion-item lines="none" routerLink="/offline-orders">
+            <ion-icon name="close" slot="start" color="light"></ion-icon>
+            <ion-label> Offline orders</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle menu="sidenav">
+          <ion-item lines="none" routerLink="/track-daily-sales">
+            <ion-icon name="close" slot="start" color="light"></ion-icon>
+            <ion-label> Track Daily Sales</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
       </ion-list>
     </ion-content>
   </ion-menu>

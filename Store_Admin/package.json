@@ -16,6 +16,7 @@
     "@angular/common": "~12.1.1",
     "@angular/compiler": "~12.1.1",
     "@angular/core": "~12.1.1",
+    "@angular/fire": "github:angular/fire",
     "@angular/forms": "~12.1.1",
     "@angular/platform-browser": "~12.1.1",
     "@angular/platform-browser-dynamic": "~12.1.1",
@@ -23,6 +24,8 @@
     "@ionic/angular": "^5.5.2",
     "@ionic/storage-angular": "^3.0.6",
     "@swimlane/ngx-datatable": "^19.0.0",
+    "chart.js": "^3.5.1",
+    "firebase": "^9.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.4"

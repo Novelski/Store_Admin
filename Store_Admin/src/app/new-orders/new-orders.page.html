@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-menu-button
+      slot="start"
+      menu="sidenav"
+      color="light"
+    ></ion-menu-button>
+    <ion-title class="ion-text-center" color="light"
+      >New-orders</ion-title
+    >
+    <ion-buttons slot="end">
+      <ion-button (click)="switchStyle()">
+        <ion-icon color="light" name="bulb"> </ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ngx-datatable
+    [rows]="neworder"
+    
+    [ngClass]="tableStyle"
+    [limit]="7" 
+    [rowHeight]="60" 
+    [columnMode]="'force'" 
+    [sortType]="'multi'" 
+    [headerHeight]="60" 
+    [footerHeight]="60"
+  >
+    <ngx-datatable-column
+      name="orderId"
+      [sortable]="false"
+    ></ngx-datatable-column>
+    <ngx-datatable-column name="items"></ngx-datatable-column>
+
+    <ngx-datatable-column name="amount"></ngx-datatable-column>
+    <ngx-datatable-column name="address"></ngx-datatable-column>
+    <ngx-datatable-column name="Actions" [sortable]="false">
+      <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+        <ion-button size="small" fill="outline" color="success" (click)="openModal()">
+          <ion-icon size="small" name="eye-outline" color="success"></ion-icon>
+        </ion-button>
+      </ng-template>
+    </ngx-datatable-column>
+  </ngx-datatable>
+</ion-content>
+

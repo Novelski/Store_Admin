@@ -3,65 +3,65 @@
     "orderId": 1,
     "items": "bread,chicken,surf",
     "amount": 240,
-    "paymentType": "Online"
+    "paymentType": "Upi/Card"
   },
   {
     "orderId": 2,
     "items": "bread,chicken,surf",
     "amount": 240,
-    "paymentType": "Online"
+    "paymentType": "Upi/Card"
   },
   {
     "orderId": 3,
     "items": "bread,chicken,surf",
     "amount": 240,
-    "paymentType": "Offline"
+    "paymentType": "cash"
   },
   {
     "orderId": 4,
     "items": "bread,chicken,surf",
     "amount": 240,
-    "paymentType": "Online"
+    "paymentType": "Upi/Card"
   },
   {
     "orderId": 5,
     "items": "bread,chicken,surf",
     "amount": 240,
-    "paymentType": "Online"
+    "paymentType": "Upi/Card"
   },
   {
     "orderId": 6,
     "items": "bread,chicken,surf",
     "amount": 240,
-    "paymentType": "Offline"
+    "paymentType": "cash"
   },
   {
     "orderId": 7,
     "items": "bread,chicken,surf",
     "amount": 240,
-    "paymentType": "Online"
+    "paymentType": "Upi/Card"
   },
   {
     "orderId": 8,
     "items": "bread,chicken,surf",
     "amount": 240,
-    "paymentType": "Offline"
+    "paymentType": "cash"
   },
   {
     "orderId": 9,
     "items": "bread,chicken,surf",
     "amount": 240,
-    "paymentType": "Online"
+    "paymentType": "Upi/Card"
   },
   {
     "orderId": 10,
     "items": "bread,chicken,surf",
     "amount": 240,
-    "paymentType": "Online"
+    "paymentType": "Upi/Card"
   },{
     "orderId": 11,
     "items": "bread,chicken,surf",
     "amount": 240,
-    "paymentType": "Offline"
+    "paymentType": "cash"
   }
 ]

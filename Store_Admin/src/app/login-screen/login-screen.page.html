@@ -17,21 +17,21 @@
         <ion-label>Login</ion-label>
       </ion-list-header>
       <ion-item-group class="ion-margin-horizontal ion-margin-bottom">
-        <form [formGroup]="form">
+        <form novalidate [formGroup]="AccountForm" >
           <div class="ion-margin-vertical">
             <ion-item>
               <ion-input
-                formControlName="username"
+                formControlName="userName"
                 placeholder="Enter User Name"
                 type="text"
               ></ion-input>
             </ion-item>
             <ion-text
-              *ngIf="!form.get('username').valid && form.get('username').touched"
+              *ngIf="!AccountForm.get('userName').valid && AccountForm.get('userName').touched"
             >
               <ion-text
                 class="error"
-                *ngIf="form.get('username').hasError('required')"
+                *ngIf="AccountForm.get('userName').hasError('required')"
                 color="danger"
               >
                 * Please Enter The User Name
@@ -50,14 +50,15 @@
                 formControlName="password"
                 placeholder="Enter Password"
                 [type]="type ? 'password' : 'text'"
+                
               ></ion-input>
             </ion-item>
             <ion-text
-            *ngIf="!form.get('password').valid && form.get('password').touched"
+            *ngIf="!AccountForm.get('password').valid && AccountForm.get('password').touched"
           >
             <ion-text
               class="error"
-              *ngIf="form.get('password').hasError('required')"
+              *ngIf="AccountForm.get('password').hasError('required')"
               color="danger"
             >
               * Please Enter The Password
@@ -71,7 +72,7 @@
           <ion-text bold slot="start" routerLink="/forgot-password">
             Forgot Password?
           </ion-text>
-          <ion-button size="large" color="danger" slot="end" routerLink="/home">Login</ion-button>
+          <ion-button size="large" color="danger" slot="end" (click)="submit()" [disabled]="(AccountForm.invalid && AccountForm.touched)">Login</ion-button>
         </ion-item>
       </ion-item-group>
     </ion-list>
