@@ -17,20 +17,20 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ngx-datatable
-    [rows]="order"
-    [ngClass]="tableStyle"
-    [rowHeight]="'auto'"
-    [headerHeight]="50"
-    [columnMode]="'force'"
-  >
-    <ngx-datatable-column
-      name="orderId"
-      [sortable]="false"
-    ></ngx-datatable-column>
-    <ngx-datatable-column name="items"></ngx-datatable-column>
-
-    <ngx-datatable-column name="amount"></ngx-datatable-column>
-    <ngx-datatable-column name="reason"></ngx-datatable-column>
-  </ngx-datatable>
+  <ion-grid class="ion-margin">
+  <ion-row>
+    <ion-col>S.No</ion-col>
+    <ion-col>Item Name</ion-col>
+    <ion-col>Amount</ion-col>
+    <ion-col>Reason</ion-col>
+    
+  </ion-row>
+  <ion-row *ngFor="let song of ordercncl">
+    <ion-col>{{song.id}}</ion-col>
+    <ion-col>{{song.item_Name}}</ion-col>
+    <ion-col>{{song.amount}}</ion-col>
+    <ion-col>{{song.reason}}</ion-col>
+    
+  </ion-row>
+  </ion-grid>
 </ion-content>

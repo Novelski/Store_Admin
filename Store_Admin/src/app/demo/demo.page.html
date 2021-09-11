@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>demo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" routerLink="/demo/add-demo">
+    <ion-fab-button>
+      <ion-icon name="add">Add Item</ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+<ion-list class="ios list-ios hydrated">
+  <ion-list-header class="ios hydrated">
+     List
+  </ion-list-header>
+
+  <ion-item *ngFor="let song of demo" >
+    <ion-label >
+      <h2>{{song.id}}</h2>
+      <h3>{{song.name}}</h3>
+      <h2>{{song.type}}</h2>
+      <h3>{{song.price}}</h3>
+      <h2>{{song.itemCode}}</h2>
+      <h3>{{song.quantity}}</h3>
+    </ion-label>
+
+    <div class="item-note" item-end>
+      <ion-button size="small" fill="outline" color="primary"  [routerLink]="['/demo/edit-demo/', song.id]">
+        <ion-icon size="small" name="create" color="primary"></ion-icon>
+      </ion-button>
+      <ion-button size="small" fill="outline" color="danger"  (click)="deleteSong(song.id)">
+        <ion-icon size="small" name="trash" color="danger"></ion-icon>
+      </ion-button>
+    </div>
+  </ion-item>
+</ion-list>
+</ion-content>

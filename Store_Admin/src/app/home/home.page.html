@@ -12,34 +12,39 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-<ngx-datatable [rows]="inventory"
-[ngClass]="tableStyle"
-[loadingIndicator]="loadingIndicator"
-[rowHeight]="'auto'"
-[headerHeight]="50"
-[columnMode]="'force'"
-[reorderable]="reorderable"
->
-  <ngx-datatable-column name="id" ></ngx-datatable-column>
-  <ngx-datatable-column name="name"></ngx-datatable-column>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" routerLink="/home/home-add">
+    <ion-fab-button>
+      <ion-icon name="add">Add Item</ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
-  <ngx-datatable-column name="Type"></ngx-datatable-column>
-  <ngx-datatable-column name="price"></ngx-datatable-column>
-  <ngx-datatable-column name="itemCode"></ngx-datatable-column>
-  <ngx-datatable-column name="quantity"></ngx-datatable-column>
-  <ngx-datatable-column name="Actions" [sortable]="false">
-    <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
-      <ion-button size="small" fill="outline" color="success" (click)="openModal()">
-        <ion-icon size="small" name="add" color="success"></ion-icon>
-      </ion-button>
-      <ion-button size="small" fill="outline" color="danger" ">
-        <ion-icon size="small" name="trash" color="danger"></ion-icon>
-      </ion-button>
-      <ion-button size="small" fill="outline" (click)="openEdit()">
-        <ion-icon size="small" name="create"></ion-icon>
-      </ion-button>
+  <ion-grid class="ion-margin">
+    <ion-row>
+      <ion-col>S.No</ion-col>
+      <ion-col>Name</ion-col>
+      <ion-col>Type</ion-col>
+      <ion-col>Price</ion-col>
+      <ion-col>Item Code</ion-col>
+      <ion-col>Quantity</ion-col>
+      <ion-col>Action</ion-col>
+    </ion-row>
+    <ion-row *ngFor="let song of demo">
+      <ion-col>{{song.id}}</ion-col>
+      <ion-col>{{song.name}}</ion-col>
+      <ion-col>{{song.type}}</ion-col>
+      <ion-col>{{song.price}}</ion-col>
+      <ion-col>{{song.itemCode}}</ion-col>
+      <ion-col>{{song.quantity}}</ion-col>
+      
+      <ion-col><div class="item-note" item-end>
+        <ion-button size="small" fill="outline" color="primary"  [routerLink]="['/home/home-edit/', song.id]">
+          <ion-icon size="small" name="create" color="primary"></ion-icon>
+        </ion-button>
+        <ion-button size="small" fill="outline" color="danger"  (click)="deleteSong(song.id)">
+          <ion-icon size="small" name="trash" color="danger"></ion-icon>
+        </ion-button>
+      </div></ion-col>
+    </ion-row>
+  </ion-grid>
 
-    </ng-template>
-  </ngx-datatable-column>
-</ngx-datatable>
 </ion-content>

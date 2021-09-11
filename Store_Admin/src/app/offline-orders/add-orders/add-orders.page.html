@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>add-Item</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <form [formGroup]="demoform" (ngSubmit)="onFormSubmit()">
+      <ion-item>
+        <ion-label position="floating">Item Name</ion-label>
+        <ion-input formControlName="item_Name" type="text" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Amont</ion-label>
+        <ion-input formControlName="amount" type="text" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Payment Type</ion-label>
+        <ion-input formControlName="payment_Type" type="text" required></ion-input>
+      </ion-item>
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" color="primary" shape="full" expand="block">Add </ion-button>
+        </ion-col>
+      </ion-row>
+  </form>
+    </ion-list>
+
+</ion-content>

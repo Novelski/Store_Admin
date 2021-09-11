@@ -1,38 +1,58 @@
-import { Component,  } from '@angular/core';
+import { Component, OnInit,  } from '@angular/core';
+import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import data from '../../assets/Delivery_Boy.json';
-import { AddDeliveryBoyComponent } from './add-delivery-boy/add-delivery-boy.component';
-import { EditDeliveryBoyComponent } from './edit-delivery-boy/edit-delivery-boy.component';
+
+
+import { DeliveryBoyService } from './delivery-boy.service';
+
 @Component({
   selector: 'app-delivery-boy',
   templateUrl: './delivery-boy.page.html',
   styleUrls: ['./delivery-boy.page.scss'],
 })
-export class DeliveryBoyPage  {
-  public delivery = data;
+export class DeliveryBoyPage implements OnInit {
+  demo:any = [];
+  Inventory: any;
   tableStyle = 'bootstrap';
   
-    constructor(private modalCtrl: ModalController) {
+    constructor(private modalCtrl: ModalController,
+      private deliveryservice: DeliveryBoyService,
+      private router: Router ) {
+    }
+    ngOnInit() {
+     
     }
 
-    async openModal(){
-      const modal = await this.modalCtrl.create({
-        component: AddDeliveryBoyComponent
-      });
-      await modal.present();
+    ionViewDidEnter() {
+      this.deliveryservice.getItemList().subscribe((res) => {
+        console.log(res)
+        this.demo = res;
+      })
     }
-      
-    async openEdit(){
-      const edit = await this.modalCtrl.create({
-        component : EditDeliveryBoyComponent
-      });
-      await edit.present()
+  
+    reloadData(){
+      this.demo = this.deliveryservice.getItemList();
     }
+
     switchStyle(){
       if(this.tableStyle === 'dark'){
         this.tableStyle= 'bootstrap';
       }else {
         this.tableStyle = 'dark';
+      }
+    }
+
+
+    deleteItem(id) {
+      if (window.confirm('Do you want to delete Item?')) {
+        this.deliveryservice.deleteItem(id)
+          .subscribe(() => {
+            this.demo.splice(id, 1);
+            console.log('Item deleted!')
+            this.reloadData();
+          }
+          )
       }
     }
 }

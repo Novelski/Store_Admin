@@ -32,10 +32,12 @@
       name="orderId"
       [sortable]="false"
     ></ngx-datatable-column>
-    <ngx-datatable-column name="items"></ngx-datatable-column>
+    <ngx-datatable-column name="orderId"></ngx-datatable-column>
 
+    <ngx-datatable-column name="items"></ngx-datatable-column>
     <ngx-datatable-column name="amount"></ngx-datatable-column>
     <ngx-datatable-column name="address"></ngx-datatable-column>
+    
     <ngx-datatable-column name="Actions" [sortable]="false">
       <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
         <ion-button size="small" fill="outline" color="success" (click)="openModal()">

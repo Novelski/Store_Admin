@@ -12,34 +12,40 @@
   </ion-header>
   
   <ion-content [fullscreen]="true">
-  <ngx-datatable [rows]="delivery"
-  [ngClass]="tableStyle"
-  [rowHeight]="'auto'"
-  [headerHeight]="50"
-  [columnMode]="'force'"
-  >
-    <ngx-datatable-column name="id"></ngx-datatable-column>
-    <ngx-datatable-column name="name"></ngx-datatable-column>
-  
-    <ngx-datatable-column name="gender"></ngx-datatable-column>
-    <ngx-datatable-column name="age"></ngx-datatable-column>
-    <ngx-datatable-column name="email"></ngx-datatable-column>
-    <ngx-datatable-column name="phone"></ngx-datatable-column>
-    <ngx-datatable-column name="adhaar"></ngx-datatable-column>
-    <ngx-datatable-column name="Actions" [sortable]="false">
-      <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
-        <ion-button size="small" fill="outline"  color="success" (click)="openModal()">
-          <ion-icon size="small" name="add" color="success"></ion-icon>
-        </ion-button>
-        <ion-button size="small" fill="outline"  color="danger">
-          <ion-icon size="small" name="trash"  color="danger"></ion-icon>
-        </ion-button>
-        <ion-button size="small" fill="outline" (click)="openEdit()">
-          <ion-icon size="small" name="create"></ion-icon>
-        </ion-button>
-  
-      </ng-template>
-    </ngx-datatable-column>
-  </ngx-datatable>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed" routerLink="/delivery-boy/add-details">
+      <ion-fab-button>
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+    <ion-grid class="ion-margin">
+      <ion-row>
+        <ion-col>S.No</ion-col>
+        <ion-col>Name</ion-col>
+        <ion-col>E-Mail</ion-col>
+        <ion-col>Age</ion-col>
+        <ion-col>Gender</ion-col>
+        <ion-col>Adhaar number</ion-col>
+        <ion-col>Mobile Number</ion-col>
+        <ion-col>Action</ion-col>
+      </ion-row>
+      <ion-row *ngFor="let song of demo">
+        <ion-col>{{song.id}}</ion-col>
+        <ion-col>{{song.name}}</ion-col>
+        <ion-col>{{song.mailid}}</ion-col>
+        <ion-col>{{song.age}}</ion-col>
+        <ion-col>{{song.gender}}</ion-col>
+        <ion-col>{{song.adhaarNo}}</ion-col>
+        <ion-col>{{song.mobileNumber}}</ion-col>
+        <ion-col> <div class="song-note" song-end>
+          <ion-button size="small" fill="outline" color="primary"  [routerLink]="['/delivery-boy/edit-details/', song.id]">
+            <ion-icon size="small" name="create" color="primary"></ion-icon>
+          </ion-button>
+          <ion-button size="small" fill="outline" color="danger"  (click)="deleteItem(song.id)">
+            <ion-icon size="small" name="trash" color="danger"></ion-icon>
+          </ion-button>
+        </div></ion-col>
+      </ion-row>
+    </ion-grid>
+
   </ion-content>
   

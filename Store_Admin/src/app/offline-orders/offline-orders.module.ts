@@ -7,8 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { OfflineOrdersPageRoutingModule } from './offline-orders-routing.module';
 
 import { OfflineOrdersPage } from './offline-orders.page';
-import { NgxDatatableModule } from '@swimlane/ngx-datatable';
-import { AddOfflineComponent } from './add-offline/add-offline.component';
+
 
 @NgModule({
   imports: [
@@ -16,10 +15,10 @@ import { AddOfflineComponent } from './add-offline/add-offline.component';
     FormsModule,
     IonicModule,
     ReactiveFormsModule,
-    NgxDatatableModule,
+    
     OfflineOrdersPageRoutingModule
   ],
-  declarations: [OfflineOrdersPage,AddOfflineComponent],
-  entryComponents:[AddOfflineComponent]
+  declarations: [OfflineOrdersPage,],
+  entryComponents:[]
 })
 export class OfflineOrdersPageModule {}

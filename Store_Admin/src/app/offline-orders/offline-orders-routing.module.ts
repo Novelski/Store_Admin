@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: OfflineOrdersPage
+  },
+  {
+    path: 'add-orders',
+    loadChildren: () => import('./add-orders/add-orders.module').then( m => m.AddOrdersPageModule)
   }
 ];
 

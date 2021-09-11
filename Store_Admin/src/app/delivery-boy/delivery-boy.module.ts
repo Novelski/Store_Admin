@@ -7,8 +7,7 @@ import {NgxDatatableModule} from '@swimlane/ngx-datatable';
 import { DeliveryBoyPageRoutingModule } from './delivery-boy-routing.module';
 
 import { DeliveryBoyPage } from './delivery-boy.page';
-import { EditDeliveryBoyComponent } from './edit-delivery-boy/edit-delivery-boy.component';
-import { AddDeliveryBoyComponent } from './add-delivery-boy/add-delivery-boy.component';
+
 
 @NgModule({
   imports: [
@@ -18,7 +17,7 @@ import { AddDeliveryBoyComponent } from './add-delivery-boy/add-delivery-boy.com
     DeliveryBoyPageRoutingModule,
     NgxDatatableModule
   ],
-  declarations: [DeliveryBoyPage,EditDeliveryBoyComponent,AddDeliveryBoyComponent],
-  entryComponents: [EditDeliveryBoyComponent,AddDeliveryBoyComponent]
+  declarations: [DeliveryBoyPage],
+  entryComponents: []
 })
 export class DeliveryBoyPageModule {}

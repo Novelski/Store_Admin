@@ -6,8 +6,8 @@
       color="light"
     ></ion-menu-button>
     <ion-title class="ion-text-center" color="light">Offline Order Management</ion-title>
-    <ion-buttons slot="end">
-      <ion-button size="small" fill="outline" color="light" (click)="openModal()">
+    <ion-buttons slot="end" routerLink="/offline-orders/add-orders">
+      <ion-button size="small" fill="outline" color="light" >
         <ion-icon size="small" slot="icon-only" name="add" color="light"></ion-icon>
         Add
       </ion-button>
@@ -21,34 +21,26 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-<ion-item slot="end">
-  <ion-button size="small" fill="outline" color="danger" >
-    <ion-icon size="small" name="add" color="danger"></ion-icon>
-  </ion-button>
-</ion-item>
-  <ngx-datatable
-    [rows]="offlineorder"
-    [ngClass]="tableStyle"
-    [rowHeight]="'auto'"
-    [headerHeight]="50"
-    [columnMode]="'force'"
-  >
-  <ion-button size="small" fill="outline" color="danger" >
-    <ion-icon size="small" name="add" color="danger"></ion-icon>
-  </ion-button>
-    <ngx-datatable-column
-      name="orderId"
-      [sortable]="false"
-    ></ngx-datatable-column>
-    <ngx-datatable-column name="items"></ngx-datatable-column>
-    <ngx-datatable-column name="amount"></ngx-datatable-column>
-    <ngx-datatable-column name="paymentType"></ngx-datatable-column>
-    <ngx-datatable-column name="Actions" [sortable]="false">
-      <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
-         <ion-button size="small" fill="outline" color="danger" >
+  <ion-grid class="ion-margin">
+    <ion-row>
+      <ion-col>S.No</ion-col>
+      <ion-col>Items</ion-col>
+      <ion-col>Amount</ion-col>
+      <ion-col>Payment Type</ion-col>
+      <ion-col>Action</ion-col>
+      
+    </ion-row>
+    <ion-row *ngFor="let song of  offlineorder">
+      <ion-col>{{song.id}}</ion-col>
+      <ion-col>{{song.item_Name}}</ion-col>
+      <ion-col>{{song.amount}}</ion-col>
+      <ion-col>{{song.payment_Type}}</ion-col>
+      
+      <ion-col><div class="item-note" item-end>
+        <ion-button size="small" fill="outline" color="danger"  (click)="deleteSong(song.id)">
           <ion-icon size="small" name="trash" color="danger"></ion-icon>
         </ion-button>
-        </ng-template>
-    </ngx-datatable-column>
-  </ngx-datatable>
+      </div></ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
